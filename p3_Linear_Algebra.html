@@ -13277,7 +13277,7 @@ $$<p>Ax=b$$</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.patches.FancyArrow at 0x121915860&gt;</pre>
+<pre>&lt;matplotlib.patches.FancyArrow at 0x11fac67f0&gt;</pre>
 </div>
 
 </div>
@@ -13416,7 +13416,8 @@ $$</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.2.1 TODO</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">21</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">42</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">33</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">],[</span><span class="mi">33</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">abT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">abT</span><span class="p">)</span>
 <span class="n">aT</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">T</span>
@@ -13441,8 +13442,10 @@ $$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 315 1446  234]
-[ 315 1446  234]
+<pre>[[ 4]
+ [33]]
+[[ 315 1446  234]]
+[[ 315 1446  234]]
 same
 </pre>
 </div>
@@ -13483,8 +13486,8 @@ $$</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.2.2 TODO</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">7</span><span class="p">]])</span>
 <span class="n">d1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,(</span><span class="n">B</span> <span class="o">+</span> <span class="n">C</span><span class="p">))</span>
 <span class="n">d2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
@@ -13505,8 +13508,12 @@ $$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[117 116 124]
-[117 116 124]
+<pre>[[117]
+ [116]
+ [124]]
+[[117]
+ [116]
+ [124]]
 </pre>
 </div>
 </div>
@@ -13585,13 +13592,38 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2.2.1 TODO</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mf">0.1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">reverse_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">reverse_A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="c1">#[2.63157895 6.26315789]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[2.63157895]
+ [6.26315789]]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13607,7 +13639,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2.2.2 TODO</span>
@@ -13678,7 +13710,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3 TODO</span>
@@ -13738,7 +13770,7 @@ $$ \large {\Vert x \Vert}^{\infty} =  \max_{i}{\vert x_i \vert} $$<p><a href="ht
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO 实现这里向量范数计算的函数，要求可以计算p = 0,1,2,3 ... 无穷 情况下的范数</span>
@@ -13762,14 +13794,7 @@ $$ \large {\Vert x \Vert}^{\infty} =  \max_{i}{\vert x_i \vert} $$<p><a href="ht
     <span class="k">if</span> <span class="n">infty</span><span class="p">:</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">ret</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ret</span>
 </pre></div>
 
@@ -13780,7 +13805,7 @@ $$ \large {\Vert x \Vert}^{\infty} =  \max_{i}{\vert x_i \vert} $$<p><a href="ht
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i -e test.py LinearRegressionTestCase.test_calc_Norm
@@ -13802,7 +13827,7 @@ $$ \large {\Vert x \Vert}^{\infty} =  \max_{i}{\vert x_i \vert} $$<p><a href="ht
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.002s
+Ran 1 test in 0.001s
 
 OK
 </pre>
@@ -13824,7 +13849,7 @@ $$ \large {\Vert A \Vert}_{F} =  \sqrt {\sum_{i,j}{\vert A_{i,j} \vert}^2 } $$<p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO 实现这里矩阵Frobenius范数计算的函数</span>
@@ -13848,7 +13873,7 @@ $$ \large {\Vert A \Vert}_{F} =  \sqrt {\sum_{i,j}{\vert A_{i,j} \vert}^2 } $$<p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i -e test.py LinearRegressionTestCase.test_calc_Frobenius_Norm
@@ -13870,7 +13895,7 @@ $$ \large {\Vert A \Vert}_{F} =  \sqrt {\sum_{i,j}{\vert A_{i,j} \vert}^2 } $$<p
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.008s
+Ran 1 test in 0.001s
 
 OK
 </pre>
@@ -13894,7 +13919,7 @@ $$ \large \kappa{(A)} =  {\Vert A \Vert}_F {\Vert A^{-1} \Vert}_F$$<p><a href="h
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot; 计算矩阵的条件数</span>
@@ -13917,7 +13942,7 @@ $$ \large \kappa{(A)} =  {\Vert A \Vert}_F {\Vert A^{-1} \Vert}_F$$<p><a href="h
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i -e test.py LinearRegressionTestCase.test_calc_Condition_Number
@@ -13939,7 +13964,7 @@ $$ \large \kappa{(A)} =  {\Vert A \Vert}_F {\Vert A^{-1} \Vert}_F$$<p><a href="h
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.006s
 
 OK
 </pre>
@@ -14030,7 +14055,7 @@ $$\large C = UDV^{T}$$<p>如果C是一个m x n的矩阵，那么U是一个m x m�
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot; 计算任意矩阵的奇异值分解</span>
@@ -14054,7 +14079,7 @@ $$\large C = UDV^{T}$$<p>如果C是一个m x n的矩阵，那么U是一个m x m�
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i -e test.py LinearRegressionTestCase.test_calc_svd
@@ -14076,7 +14101,7 @@ $$\large C = UDV^{T}$$<p>如果C是一个m x n的矩阵，那么U是一个m x m�
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.014s
+Ran 1 test in 0.021s
 
 OK
 </pre>
@@ -14096,7 +14121,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO 利用SVD进行对于矩阵进行降维</span>
@@ -14126,13 +14151,43 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i -e test.py LinearRegressionTestCase.test_calc_svd_decompostion
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>E
+======================================================================
+ERROR: test_calc_svd_decompostion (__main__.LinearRegressionTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &#34;/Users/yiikai/Develop/tensorflow/udacity/Linear-Algebra-cn/test.py&#34;, line 57, in test_calc_svd_decompostion
+    self.assertEqual(calc_svd_decompostion(test_sample).any()==result.any(),True,&#39;Wrong answer&#39;)
+AttributeError: &#39;NoneType&#39; object has no attribute &#39;any&#39;
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14146,7 +14201,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot; 利用SVD进行对于矩阵进行降维</span>
@@ -14173,13 +14228,43 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i -e test.py LinearRegressionTestCase.test_calc_svd_reconsitution
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>E
+======================================================================
+ERROR: test_calc_svd_reconsitution (__main__.LinearRegressionTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &#34;/Users/yiikai/Develop/tensorflow/udacity/Linear-Algebra-cn/test.py&#34;, line 76, in test_calc_svd_reconsitution
+    self.assertEqual(calc_svd_reconsitution(test_sample,topk=1).any()==result.any(),True,&#39;Wrong answer&#39;)
+AttributeError: &#39;NoneType&#39; object has no attribute &#39;any&#39;
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14196,7 +14281,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 不要修改这里！</span>
@@ -14212,10 +14297,28 @@ OK
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(506, 13)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss_hist</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14233,6 +14336,28 @@ OK
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-31-736680c8eb8f&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">10</span>
+<span class="ansi-red-fg">    plt.plot(range(1,13),loss_hist,&#39;r--&#39;)</span>
+      ^
+<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> expected an indented block
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14256,7 +14381,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 5.5 TODO</span>
@@ -14301,7 +14426,7 @@ VT: (750, 750)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#请在U，D，V变量完成的情况下调用此测试程序，不要修改此处</span>
